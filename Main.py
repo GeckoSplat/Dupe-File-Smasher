@@ -13,7 +13,6 @@ def smash_dupe_files():
     walker1 = os.walk(path, topdown=False)
     uniqueFiles = dict()
     for folder, sub_folder, files in walker1:
-        print (f'{files,folder}')
         for file in files:
             filepath = os.path.join(folder,file)
             filehash = hashlib.md5(open(filepath,'rb').read()).hexdigest()
@@ -27,9 +26,6 @@ def smash_dupe_files():
             print(f'{folder} Has Been Deleted ')
   
 
-        
-
 if  __name__ == '__main__':
-    smash_dupe_files()
-    
-    print ('\n\tOperation complete. Please check recycle bin for deleted data before permenant removal')
+    smash_dupe_files()    
+    print ('\n\tOperation complete. \n\tPlease check recycle bin for deleted data and choose if you wish to remove permenantly')
