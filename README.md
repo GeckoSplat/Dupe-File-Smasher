@@ -13,7 +13,7 @@ The only thing deleted permenantly are any empty folders it finds. You can then 
 
 Install Send2Trash.
 
-"pip install send2trash"
+Open a terminal window and type the command "pip install send2trash"
 
 Clone / Download this repo.
 
@@ -23,7 +23,7 @@ Open a terminal in the directory where you cloned the repo.
 
 Type " Python ( or Python3 ) Main.py " Press the return key.
 
-Select the directory you wish to run in, in the pop up messagbox. 
+Select the directory you wish to run in, in the pop up messagebox. 
 
 Click OK in the messagebox. 
 
