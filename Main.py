@@ -1,4 +1,5 @@
 from tkinter import Tk
+from tkinter import messagebox
 from tkinter.filedialog import askdirectory
 import os
 import hashlib
@@ -6,8 +7,8 @@ from send2trash import send2trash
 
 
 
-Tk().withdraw() # Don't need full GUI, so stops root window from appearing 
-path = askdirectory (title = 'Please Select A Folder')
+Tk().withdraw() # Stops root window from appearing 
+path = askdirectory (title = 'Please Select A Folder To Smash')
 
 def smash_dupe_files():
     walker1 = os.walk(path, topdown=False)
@@ -24,8 +25,12 @@ def smash_dupe_files():
         if len(os.listdir(folder)) == 0:
             os.rmdir(folder)
             print(f'{folder} Has Been Deleted ')
-  
+
+def message():
+    messagebox.showinfo(title = 'File Smasher Done' , message = 'Please check recycle bin for deleted data')
+    
 
 if  __name__ == '__main__':
-    smash_dupe_files()    
-    print ('\n\tOperation complete. \n\tPlease check recycle bin for deleted data and choose if you wish to remove permenantly')
+    smash_dupe_files()
+    message()    
+    print ('\n\tOperation complete. \n\tPlease check recycle bin for deleted data.')
