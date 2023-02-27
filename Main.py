@@ -6,11 +6,8 @@ import hashlib
 from send2trash import send2trash
 
 
-Tk().withdraw()
-path = askdirectory(title="Please Select A Folder To Smash")
-
-
 def smash_dupe_files():
+    path = askdirectory(title="Please Select A Folder To Smash")
     walker1 = os.walk(path, topdown=False)
     uniqueFiles = dict()
     # sub_folder needs to be present or not enought values to unpack creates a Value Error.
@@ -35,7 +32,7 @@ def message():
 
 
 if __name__ == "__main__":
-
+    Tk().withdraw()
     try:
         smash_dupe_files()
         message()
