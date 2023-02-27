@@ -6,13 +6,14 @@ import hashlib
 from send2trash import send2trash
 
 
-Tk().withdraw()  # Stops root window from appearing
+Tk().withdraw()
 path = askdirectory(title="Please Select A Folder To Smash")
 
 
 def smash_dupe_files():
     walker1 = os.walk(path, topdown=False)
     uniqueFiles = dict()
+    # sub_folder needs to be present or not enought values to unpack creates a Value Error.
     for folder, sub_folder, files in walker1:
         for file in files:
             filepath = os.path.join(folder, file)
